@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        .bg{
+            background-image:url('https://tse4.mm.bing.net/th?id=OIP.Qal65pRRDE4aWymiyxowAQHaEK&pid=Api&P=0&h=180');
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-style: papyrus;
+            text-align: center;
+            padding-top:10%;
+            font-size: x-large;
+            color:black;
+        }
+        .text{
+            font-family:papyrus;
+            font-size:30px;
+            color:rgb(23, 1, 29);
+        }
+    </style>
+</head>
+<body class="bg" ><h4>Profile</h4>
+    <h1 class="text">Welcome, <%= user.Fullname %>!</h1>
+    <h1 class="text">Email: <%= user.Email %></h1>
+    <h3 class="text">Thanks for choosing us,we ensure you a happy shopping</h3>
+    <a href="/logout">Logout</a>
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Knitting With Love</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-image: url("https://media.istockphoto.com/photos/abstract-blurred-background-of-department-store-picture-id689911172?k=6&m=689911172&s=170667a&w=0&h=tvbcQ4T8PVZoz_-W973k47pqaIxN1fUAUPdzN7otPEs=");
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+.container {
+    max-width: 400px;
+    margin: 300px auto;
+    padding: 20px;
+    background-color: transparent;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+h2 {
+    margin: 0;
+    font-size: 30px;
+    text-align: center;
+    font-weight: 800;
+    color: #ccdff3;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+button {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <form  method="post" action="/loginsubmit" id="login-form" class="form">
+                <h2>Login</h2>
+                <input type="email" id="Email" placeholder="Email" name="Email" required><br>
+                <input type="password" id="Password" placeholder="Password"  name="Password" required><br>
+                <button type="submit">Login</button>
+            </form>
+            <span><a href="/signup">Create Account</a></span>
+        </div>
+    </div>
+    <script>
+        
+    </script>
+</body>
+</html>

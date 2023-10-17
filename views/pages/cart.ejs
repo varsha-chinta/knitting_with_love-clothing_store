@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cart</title>
+    <style>
+        .cart-item {
+            display: flex;
+            margin: 10px 0;
+        }
+        .cart-image {
+            flex: 0 0 auto;
+            margin-right: 10px;
+        }
+        .cart-details {
+            flex: 1;
+            font-size: 30px;
+        }
+        .cart-buttons {
+            display: flex;
+            margin-top: 35px;
+        }
+        .cart-buttons button {
+            padding: 10px 20px; /* Adjust the padding to change button size */
+            font-size: 35px; /* Adjust the font size as needed */
+            margin-right: 100px;
+        }
+        .total-price {
+            font-size: 40px; /* Adjust the font size as needed */
+        }
+        p{
+          font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <p>Cart</p>
+    <ul>
+        <% cartData.forEach(item => { %>
+            <li class="cart-item">
+                <div class="cart-image">
+                    <img src="<%= item.image_url %>" alt="<%= item.product_name %>" width="300" height="300px">
+                </div>
+                <div class="cart-details">
+                    <strong>Product Name:</strong> <%= item.product_name %><br>
+                    <strong>Product ID:</strong> <%= item.product_id %><br>
+                    <% if (item.price !== undefined) { %>
+                        <strong>Price:</strong> ₹<%= item.price.toFixed(2) %><br>
+                    <% } %>
+                    <!-- Add any other product details you want to display -->
+                </div>
+            </li>
+        <% }); %>
+    </ul>
+
+    <!-- Display the total price here -->
+    <br>
+    <div class="class="total-price">
+    <strong >Total Price:</strong> ₹<%= totalPrice.toFixed(2) %><br></div>
+
+    <div class="cart-buttons">
+      <form action="/clear-cart" method="POST">
+          <button type="submit">Clear Cart</button>
+      </form>
+
+      <!-- "Buy Now" button -->
+      <form action="/buy-now" method="POST">
+          <button type="submit">Buy Now</button>
+      </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,1741 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+        <title>Knits For Love</title>
+        <style>
+            *{
+                margin:0px;
+                padding:0px;
+                box-sizing: border-box;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            }
+            ul{
+                list-style:none;
+            }
+            a{
+                text-decoration: none;
+            }
+            .navigation{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px 0px;
+                width:90%;
+                margin:auto;
+                max-width: 1100px;
+            }
+            .logo{
+                font-size: 1.8rem;
+                color:black;
+                font-weight: 800;
+                text-transform: uppercase;
+            }
+            .logo img{
+                height: 100%;
+                object-fit: contain;
+                object-position: center;
+                max-height: 150px;
+            }
+            .nav-bts{
+                display:flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .nav-bts a{
+                width:35px;
+                height:35px;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+                background-color: #fed2d1;
+                color: #383838;
+                font-size: 0.8rem;
+                margin-left: 10px;
+            }
+            .nav-bts a i{
+                margin-top: 2px;
+            }
+            .product-grid-half{
+                max-width: 1200px;
+                width:90%;
+                margin:50px auto;
+                display: grid;
+                grid-template-columns: 1.5fr 1fr;
+                grid-template-rows: 1fr 1fr;
+                grid-gap:20px;
+                max-height: 300px;
+            }
+            .product-grid-half .product-grid-box1,
+            .product-grid-half .product-grid-box2,
+            .product-grid-half .product-grid-box3{
+                height:100%;
+            }
+            .product-grid-half .product-grid-box1{
+                grid-row: 1/3;
+            }
+            .product-grid-half .product-grid-box1 .product-grid-text{
+                max-height: 220px;
+            }
+            .product-grid-half .product-grid-box1 .product-grid-text strong{
+                font-size: 1.4rem;
+                line-height: 1.8rem;
+            }
+            #popular-products{
+                max-width: 1200px;
+                width:90%;
+                margin: 50px auto;
+            }
+            .popular-heading{
+                width:100%;
+                display:flex;
+                justify-content: space-between;
+                align-items: center;
+                background-color: #fafafa;
+                padding: 10px 20px;
+                border-radius: 10px;
+            }
+            .popular-heading h3{
+                font-size: 1.8rem;
+                color:#1d1d1d;
+                font-weight: 800;
+            }
+            .popular-heading a{
+                color:#5a5a5a;
+                font-size:0.9rem;
+            }
+            .popular-box{
+                max-width:300px;
+                width:100%;
+                display:grid;
+                grid-template-columns:100px 1fr;
+            }
+            .popular-box-img{
+                width:100%;
+                height:120px;
+                background-color: #fff8f8;
+                border-radius: 6px;
+                padding: 10px;
+            }
+            .popular-box-img img{
+                width:100%;
+                height:100%;
+                object-fit: contain;
+                object-position: center;
+            }
+            .popular-box-text{
+                display:flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                margin-left: 10px;
+                width:100%;
+            }
+            .popular-box-text a{
+                color: #363636;
+                font-size: 1rem;
+                font-weight: 600;
+            }
+            .popular-box-text .p-cat{
+                color:#8b3d74;
+                font-size: 0.9rem;
+                font-weight: 500;
+            }
+            .popular-box-text .p-price{
+                color:#1d1d1d;
+                font-size:1.4rem;
+                font-weight:500;
+            }
+            .popular-box-text .p-price del{
+                color:#8b3d74;
+                font-size: 1rem;
+            }
+            .popular-container{
+                display:grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-gap: 40px;
+                margin-top: 30px;
+            }
+            #partner{
+                display: flex;
+                flex-direction: column;
+                max-width: 1200px;
+                width:90%;
+                margin: 50px auto;
+            }
+            .partner-heading h3{
+                font-size: 1.5rem;
+                color: #202020;
+                letter-spacing: 0.5px;
+                font-weight: 700;
+            }
+            .logo-container{
+                display:flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+                margin-top: 40px;
+                grid-gap: 15px;
+            }
+            .logo-container img{
+                height: 70px;
+                object-position: center;
+                object-fit: contain;
+                filter:grayscale(1);
+                opacity: 0.3;
+                transition: all ease 0.3s;
+            }
+            .logo-container img:hover{
+                filter:grayscale(0);
+                opacity: 1;
+            }
+            .product-grid-2{
+                max-width: 1200px;
+                width:90%;
+                margin:50px auto;
+                display:grid;
+                grid-template-columns: 1fr 1fr;
+                grid-gap:30px;
+            }
+            footer{
+                width:100%;
+                border-top:1px solid #e9e9e9;
+
+            }
+            .footer-container{
+                max-width:1200px;
+                width:90%;
+                margin:0px auto;
+                padding:50px 0px;
+                display:flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .footer-company-box{
+                max-width: 530px;
+            }
+            .footer-company-box .footer-logo{
+                font-size: 1.8rem;
+                color:#333333;
+                text-transform: uppercase;
+                font-weight: 900;
+            }
+            .footer-company-box p{
+                color: #585858;
+                font-size: 0.9rem;
+                line-height: 1.4rem;
+                margin: 5px 0px;
+            }
+            .footer-social{
+                display:flex;
+                align-items: center;
+                flex-wrap: wrap;
+            }
+            .footer-social a{
+                margin-top:10px;
+                margin-right: 10px;
+                width:40px;
+                height:40px;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border:1px solid #e9e9e9;
+                color:#333333;
+                font-size: 0.9rem;
+            }
+            .footer-link-box strong{
+                font-size: 1.2rem;
+                color:#333333;
+                font-weight: 600;
+            }
+            .footer-link-box ul li a{
+                color: #797979;
+                display:flex;
+                margin-bottom: 5px;
+                font-weight: 500;
+                transition: all ease 0.3s;
+            }
+            .footer-link-box ul li a:hover{
+                color: #0f0f0f;
+            }
+            .footer-bottom{
+                display:flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+                grid-gap: 10px;
+                border-top: 1px solid #e9e9e9;
+                padding:20px 0px;
+                max-width: 1200px;
+                width:90%;
+                margin: auto;
+
+            }
+            @media(max-width:1100px){
+                .footer-container{
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    grid-gap:40px;
+                }
+                .new-product-container{
+                    grid-template-columns: 1fr 1fr 1fr 1fr;
+                }
+                .product-grid-3{
+                    grid-template-columns: 1fr 1fr;
+                }
+            }
+            @media(max-width:1000px){
+                .product-grid-half{
+                    grid-template-columns: 1fr 1fr;
+                    grid-template-rows: 1fr 200px;
+                    max-height: 100px;
+                }
+                .product-grid-half .product-grid-box1{
+                    grid-column: 1/3;
+                    grid-row: 1/2;
+                    height: 300px;
+                }
+            }
+            @media(max-width:900px){
+                #main{
+                    display:flex;
+                    flex-direction:column-reverse ;
+                }
+                .main-text{
+                    margin-top: 40px;
+                    margin-bottom: 10px;
+                }
+                .popular-container{
+                    grid-template-columns: 1fr 1fr;
+
+                }
+                .logo-container{
+                    margin:20px;
+                    justify-content: space-between;
+                }
+                .logo-container img{
+                    height:40px;
+                }
+            }
+            .product-text .rating{
+                color: #f3a00f;
+                font-size: 0.6rem;
+                margin-top: 8px;
+
+            }
+            .product-text .cart-btn{
+                width: 70%;
+                height:25px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 5px;
+                background-color: #161616;
+                color: #f1f1f1;
+                margin-top: 8px;
+                font-size: 0.8rem;
+            }
+
+        </style>
+
+    </head>
+    <body>
+        <nav class="navigation">
+            <a href="#" class="logo">
+                <img src="https://th.bing.com/th/id/OIP.m_v71PFrpMB4IpO5h1rxXgAAAA?pid=ImgDet&rs=1"/>
+            </a>
+            
+            <div class="nav-bts">
+                <a href="/profile" class="nav-user">
+                    <i class="fa-solid fa-user"></i>
+                </a>
+                <a href="/cart" class="nav-cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </a>
+            </div>
+        </nav>
+        <% if (typeof successMessage !== 'undefined') { %>
+            <div class="success-message">
+              <%= successMessage %>
+            </div>
+        <% } %>
+          
+        
+        <section id="popular-products">
+            <div class="popular-heading">
+                <h3>Women's Wear</h3>
+                <a href="#">All</a>
+            </div>
+            <div class="popular-container">
+                <div class="popular-box">
+                    <a href="#" class="popular-box-img">
+                        <img src="https://i.pinimg.com/736x/00/f7/fe/00f7fe92ea796b9b97190c49ed379fc7.jpg"/>
+                    </a>
+                    <div class="popular-box-text">
+                        <a href="#">Women's Casual Wear</a>
+                        <span class="p-cat">Women's Wear</span>
+                        <span class="p-price">1000₹ <del> 1500₹</del></span>
+                        <div class="product-text">
+                            <span class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <span>350 Review's</span>
+                            </span>
+                            <form action="/add-to-cart" method="post">
+                                <input type="hidden" name="product_id" value="12341"> 
+                                <input type="hidden" name="product_name" value="Kurta Set">
+                                <input type="hidden" name="price" value="1000">
+                                <input type="hidden" name="image_url" value="https://i.pinimg.com/736x/00/f7/fe/00f7fe92ea796b9b97190c49ed379fc7.jpg"> 
+                                <button type="submit" class="cart-btn">Add To Cart</button>
+                              </form>
+                              
+
+                        </div>
+                       
+                    </div>
+                </div>
+                <div class="popular-box">
+                    <a href="#" class="popular-box-img">
+                        <img src="https://5.imimg.com/data5/SELLER/Default/2022/10/NC/SI/RB/15389059/whatsapp-image-2022-10-11-at-3-44-50-pm-1--500x500.jpeg"/>
+                    </a>
+                    <div class="popular-box-text">
+                        <a href="#">Women's Casual Wear</a>
+                        <span class="p-cat">Women's Wear</span>
+                        <span class="p-price">2000₹ <del> 2500₹</del></span>
+                        <div class="product-text">
+                            <span class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <span>350 Review's</span>
+                            </span>
+                            <form action="/add-to-cart" method="post">
+                                <input type="hidden" name="product_id" value="12342"> 
+                                <input type="hidden" name="product_name" value="Long Kurta">
+                                <input type="hidden" name="price" value="2000">
+                                <input type="hidden" name="image_url" value="https://5.imimg.com/data5/SELLER/Default/2022/10/NC/SI/RB/15389059/whatsapp-image-2022-10-11-at-3-44-50-pm-1--500x500.jpeg">
+                                <button type="submit" class="cart-btn">Add To Cart</button>
+                              </form>
+                              
+                            
+
+                        </div>
+                    </div>
+                </div>
+                <div class="popular-box">
+                    <a href="#" class="popular-box-img">
+                        <img src="https://i.pinimg.com/236x/f5/ef/31/f5ef31f8bd5efaa64f5bfa5856eda6c6.jpg"/>
+                    </a>
+                    <div class="popular-box-text">
+                        <a href="#">Women's Casual Wear</a>
+                        <span class="p-cat">Women's Wear</span>
+                        <span class="p-price">1000₹ <del> 1200₹</del></span>
+                        <div class="product-text">
+                            <span class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <span>550 Review's</span>
+                            </span>
+                            <form action="/add-to-cart" method="post">
+                                <input type="hidden" name="product_id" value="12343"> 
+                                <input type="hidden" name="product_name" value="Long Top With Dupatta">
+                                <input type="hidden" name="price" value="1000">
+                                <input type="hidden" name="image_url" value="https://i.pinimg.com/236x/f5/ef/31/f5ef31f8bd5efaa64f5bfa5856eda6c6.jpg">
+                                <button type="submit" class="cart-btn">Add To Cart</button>
+                              </form>
+                              
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="popular-box">
+                    <a href="#" class="popular-box-img">
+                        <img src="https://5.imimg.com/data5/SELLER/Default/2020/11/BR/AV/DT/83002961/whatsapp-image-2020-10-23-at-12-22-00-pm-1--500x500.jpeg"/>
+                    </a>
+                    <div class="popular-box-text">
+                        <a href="#">Women's Party Wear</a>
+                        <span class="p-cat">Women's Wear</span>
+                        <span class="p-price">1500₹ <del> 2500₹</del></span>
+                        <div class="product-text">
+                            <span class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <span>250 Review's</span>
+                            </span>
+                            <form action="/add-to-cart" method="post">
+                                <input type="hidden" name="product_id" value="12345"> 
+                                <input type="hidden" name="product_name" value="Long Red Kali">
+                                <input type="hidden" name="price" value="1500"> 
+                                <input type="hidden" name="image_url" value="https://5.imimg.com/data5/SELLER/Default/2020/11/BR/AV/DT/83002961/whatsapp-image-2020-10-23-at-12-22-00-pm-1--500x500.jpeg">
+                                <button type="submit" class="cart-btn">Add To Cart</button>
+                              </form>
+                              
+
+                        </div>
+                    </div>
+                </div>
+                <div class="popular-box">
+                    <a href="#" class="popular-box-img">
+                        <img src="https://i.etsystatic.com/31494395/r/il/7fa685/3456353830/il_1080xN.3456353830_n8e6.jpg"/>
+                    </a>
+                    <div class="popular-box-text">
+                        <a href="#">Women's Party Wear</a>
+                        <span class="p-cat"> Women's Wear</span>
+                        <span class="p-price">550₹ <del> 700₹</del></span>
+                        <div class="product-text">
+                            <span class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <span>100 Review's</span>
+                            </span>
+                            <form action="/add-to-cart" method="post">
+                                <input type="hidden" name="product_id" value="12346"> 
+                                <input type="hidden" name="product_name" value="Peach Lehanga">
+                                <input type="hidden" name="price" value="550">
+                                <input type="hidden" name="image_url" value="https://i.etsystatic.com/31494395/r/il/7fa685/3456353830/il_1080xN.3456353830_n8e6.jpg">
+                                <button type="submit" class="cart-btn">Add To Cart</button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="popular-box">
+                    <a href="#" class="popular-box-img">
+                        <img src="https://5.imimg.com/data5/SELLER/Default/2020/11/DC/HD/WU/83002961/whatsapp-image-2020-10-23-at-12-21-56-pm-500x500.jpeg"/>
+                    </a>
+                    <div class="popular-box-text">
+                        <a href="#">Women's Party Wear</a>
+                        <span class="p-cat">Women's Wear</span>
+                        <span class="p-price">1500₹ <del> 1900₹</del></span>
+                        <div class="product-text">
+                            <span class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <span>450 Review's</span>
+                            </span>
+                            <form action="/add-to-cart" method="post">
+                                <input type="hidden" name="product_id" value="12346"> 
+                                <input type="hidden" name="product_name" value="Glittering Black Frock"> 
+                                <input type="hidden" name="price" value="1500">
+                                <input type="hidden" name="image_url" value="https://5.imimg.com/data5/SELLER/Default/2020/11/DC/HD/WU/83002961/whatsapp-image-2020-10-23-at-12-21-56-pm-500x500.jpeg">
+                                <button type="submit" class="cart-btn">Add To Cart</button>
+                              </form>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="popular-box">
+                    <a href="#" class="popular-box-img">
+                        <img src="https://assets.ajio.com/medias/sys_master/root/20230623/S9q4/6494dcad42f9e729d780d6c6/-1117Wx1400H-464498909-orange-MODEL.jpg"/>
+                    </a>
+                    <div class="popular-box-text">
+                        <a href="#">Women's Ethnic Wear</a>
+                        <span class="p-cat">Women's Wear</span>
+                        <span class="p-price">1500₹ <del> 1900₹</del></span>
+                        <div class="product-text">
+                            <span class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <span>350 Review's</span>
+                            </span>
+                            <form action="/add-to-cart" method="post">
+                                <input type="hidden" name="product_id" value="12347"> 
+                                <input type="hidden" name="product_name" value="Splitten Kurta Set"> 
+                                <input type="hidden" name="price" value="1500">
+                                <input type="hidden" name="image_url" value="https://assets.ajio.com/medias/sys_master/root/20230623/S9q4/6494dcad42f9e729d780d6c6/-1117Wx1400H-464498909-orange-MODEL.jpg">
+                                <button type="submit" class="cart-btn">Add To Cart</button>
+                              </form>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="popular-box">
+                    <a href="#" class="popular-box-img">
+                        <img src="https://5.imimg.com/data5/SELLER/Default/2022/4/TZ/KK/QT/28280455/indian-designer-dresses-for-women-500x500.jpg"/>
+                    </a>
+                    <div class="popular-box-text">
+                        <a href="#">Women's Ethnic Wear</a>
+                        <span class="p-cat">Women's Wear</span>
+                        <span class="p-price">1500₹ <del> 1900₹</del></span>
+                        <div class="product-text">
+                            <span class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <span>350 Review's</span>
+                            </span>
+                            <form action="/add-to-cart" method="post">
+                                <input type="hidden" name="product_id" value="12348"> 
+                                <input type="hidden" name="product_name" value="Long Blue Kali"> 
+                                <input type="hidden" name="price" value="1500">
+                                <input type="hidden" name="image_url" value="https://5.imimg.com/data5/SELLER/Default/2022/4/TZ/KK/QT/28280455/indian-designer-dresses-for-women-500x500.jpg">
+                                <button type="submit" class="cart-btn">Add To Cart</button>
+                              </form>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="popular-box">
+                    <a href="#" class="popular-box-img">
+                        <img src="https://5.imimg.com/data5/SELLER/Default/2021/6/TB/QS/LU/109762902/1y0a0254-500x500.JPG"/>
+                    </a>
+                    <div class="popular-box-text">
+                        <a href="#">Women's Ethnic Wear</a>
+                        <span class="p-cat">Women's Wear</span>
+                        <span class="p-price">1500₹ <del> 1900₹</del></span>
+                        <div class="product-text">
+                            <span class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <span>150 Review's</span>
+                            </span>
+                            <form action="/add-to-cart" method="post">
+                                <input type="hidden" name="product_id" value="12349"> 
+                                <input type="hidden" name="product_name" value="Ethnic Kurta">
+                                <input type="hidden" name="price" value="1500"> 
+                                <input type="hidden" name="image_url" value="https://5.imimg.com/data5/SELLER/Default/2021/6/TB/QS/LU/109762902/1y0a0254-500x500.JPG">
+                                <button type="submit" class="cart-btn">Add To Cart</button>
+                              </form>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="popular-box">
+                    <a href="#" class="popular-box-img">
+                        <img src="https://sslimages.shoppersstop.com/sys-master/images/hd8/hd8/30899403292702/A23346DR02_WHITE.jpg_230Wx334H"/>
+                    </a>
+                    <div class="popular-box-text">
+                        <a href="#">Women's Western Wear</a>
+                        <span class="p-cat">Women's Wear</span>
+                        <span class="p-price">1500₹ <del> 1900₹</del></span>
+                        <div class="product-text">
+                            <span class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <span>440 Review's</span>
+                            </span>
+                            <form action="/add-to-cart" method="post">
+                                <input type="hidden" name="product_id" value="123410"> 
+                                <input type="hidden" name="product_name" value="Floral Short Frock">
+                                <input type="hidden" name="price" value="1500"> 
+                                <input type="hidden" name="image_url" value="https://sslimages.shoppersstop.com/sys-master/images/hd8/hd8/30899403292702/A23346DR02_WHITE.jpg_230Wx334H">
+                                <button type="submit" class="cart-btn">Add To Cart</button>
+                              </form>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="popular-box">
+                    <a href="#" class="popular-box-img">
+                        <img src="https://rukminim2.flixcart.com/image/850/1000/xif0q/dress/t/n/j/xxl-mlt-dr-169-masakali-co-original-imaggyykzwckurzs.jpeg?q=90"/>
+                    </a>
+                    <div class="popular-box-text">
+                        <a href="#">Women's Western Wear</a>
+                        <span class="p-cat">Women's Wear</span>
+                        <span class="p-price">1500₹ <del> 1900₹</del></span>
+                        <div class="product-text">
+                            <span class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <span>650 Review's</span>
+                            </span>
+                            <form action="/add-to-cart" method="post">
+                                <input type="hidden" name="product_id" value="123411"> 
+                                <input type="hidden" name="product_name" value="short Frock">
+                                <input type="hidden" name="price" value="1500">
+                                <input type="hidden" name="image_url" value="https://rukminim2.flixcart.com/image/850/1000/xif0q/dress/t/n/j/xxl-mlt-dr-169-masakali-co-original-imaggyykzwckurzs.jpeg?q=90"> 
+                                <button type="submit" class="cart-btn">Add To Cart</button>
+                              </form>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="popular-box">
+                    <a href="#" class="popular-box-img">
+                        <img src="https://images.meesho.com/images/products/99566277/p0huk_512.webp"/>
+                    </a>
+                    <div class="popular-box-text">
+                        <a href="#">Women's Western Wear</a>
+                        <span class="p-cat">Women's Wear</span>
+                        <span class="p-price">1500₹ <del> 1900₹</del></span>
+                        <div class="product-text">
+                            <span class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <span>560 Review's</span>
+                            </span>
+                            <form action="/add-to-cart" method="post">
+                                <input type="hidden" name="product_id" value="123412"> 
+                                <input type="hidden" name="product_name" value="Western Wear">
+                                <input type="hidden" name="price" value="1500"> 
+                                <input type="hidden" name="image_url" value="https://images.meesho.com/images/products/99566277/p0huk_512.webp">
+                                <button type="submit" class="cart-btn">Add To Cart</button>
+                              </form>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </section>
+        <section id="popular-products">
+            <div class="popular-heading">
+                <h3>Men's Wear</h3>
+                <a href="#">All</a>
+            </div>
+            <div class="popular-container">
+                <div class="popular-box">
+                    <a href="#" class="popular-box-img">
+                        <img src="https://i.pinimg.com/736x/ff/91/cb/ff91cb77d7f0ccea14543c1028ddc70a.jpg"/>
+                    </a>
+                    <div class="popular-box-text">
+                        <a href="#">Men's Western Wear</a>
+                        <span class="p-cat">Men's Wear</span>
+                        <span class="p-price">1000₹ <del> 1500₹</del></span>
+                        <div class="product-text">
+                            <span class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <span>350 Review's</span>
+                            </span>
+                            <form action="/add-to-cart" method="post">
+                                <input type="hidden" name="product_id" value="123413"> 
+                                <input type="hidden" name="product_name" value="Men's Western Wear">
+                                <input type="hidden" name="price" value="1000">
+                                <input type="hidden" name="image_url" value="https://i.pinimg.com/736x/ff/91/cb/ff91cb77d7f0ccea14543c1028ddc70a.jpg"> 
+                                <button type="submit" class="cart-btn">Add To Cart</button>
+                              </form>
+
+                        </div>
+                       
+                    </div>
+                </div>
+                <div class="popular-box">
+                    <a href="#" class="popular-box-img">
+                        <img src="https://images.wrangler.com/is/image/Wrangler/112325816-HERO?$KDP-LARGE2$"/>
+                    </a>
+                    <div class="popular-box-text">
+                        <a href="#">Men's Western Wear</a>
+                        <span class="p-cat">Men's Wear</span>
+                        <span class="p-price">2000₹ <del> 2500₹</del></span>
+                        <div class="product-text">
+                            <span class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <span>350 Review's</span>
+                            </span>
+                            <form action="/add-to-cart" method="post">
+                                <input type="hidden" name="product_id" value="123414"> 
+                                <input type="hidden" name="product_name" value="Men's Western Wear">
+                                <input type="hidden" name="price" value="2000">
+                                <input type="hidden" name="image_url" value="https://images.wrangler.com/is/image/Wrangler/112325816-HERO?$KDP-LARGE2$"> 
+                                <button type="submit" class="cart-btn">Add To Cart</button>
+                              </form>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="popular-box">
+                    <a href="#" class="popular-box-img">
+                        <img src="https://i.pinimg.com/550x/01/37/95/013795a1531cd3ffd3e424ebeeca0dd4.jpg"/>
+                    </a>
+                    <div class="popular-box-text">
+                        <a href="#">Men's western Wear</a>
+                        <span class="p-cat">Men's Wear</span>
+                        <span class="p-price">1000₹ <del> 1200₹</del></span>
+                        <div class="product-text">
+                            <span class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <span>550 Review's</span>
+                            </span>
+                            <form action="/add-to-cart" method="post">
+                                <input type="hidden" name="product_id" value="123415"> 
+                                <input type="hidden" name="product_name" value="Men's Western Wear">
+                                <input type="hidden" name="price" value="1000">
+                                <input type="hidden" name="image_url" value="https://i.pinimg.com/550x/01/37/95/013795a1531cd3ffd3e424ebeeca0dd4.jpg"> 
+                                <button type="submit" class="cart-btn">Add To Cart</button>
+                              </form>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="popular-box">
+                    <a href="#" class="popular-box-img">
+                        <img src="https://5.imimg.com/data5/AZ/VV/UM/SELLER-7424477/mans-ethnic-wear.jpeg"/>
+                    </a>
+                    <div class="popular-box-text">
+                        <a href="#">Men's Ethnic Wear</a>
+                        <span class="p-cat">Men's Wear</span>
+                        <span class="p-price">1500₹ <del> 2500₹</del></span>
+                        <div class="product-text">
+                            <span class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <span>250 Review's</span>
+                            </span>
+                            <form action="/add-to-cart" method="post">
+                                <input type="hidden" name="product_id" value="123416"> 
+                                <input type="hidden" name="product_name" value="Men's Ethnic Wear">
+                                <input type="hidden" name="price" value="1500">
+                                <input type="hidden" name="image_url" value="https://5.imimg.com/data5/AZ/VV/UM/SELLER-7424477/mans-ethnic-wear.jpeg"> 
+                                <button type="submit" class="cart-btn">Add To Cart</button>
+                              </form>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="popular-box">
+                    <a href="#" class="popular-box-img">
+                        <img src="https://imgmedia.lbb.in/media/2020/12/5fe08e7405250c1f0d865452_1608552052680.jpg"/>
+                    </a>
+                    <div class="popular-box-text">
+                        <a href="#">Men's Ethnic Wear</a>
+                        <span class="p-cat"> Men's Wear</span>
+                        <span class="p-price">550₹ <del> 700₹</del></span>
+                        <div class="product-text">
+                            <span class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <span>100 Review's</span>
+                            </span>
+                            <form action="/add-to-cart" method="post">
+                                <input type="hidden" name="product_id" value="123417"> 
+                                <input type="hidden" name="product_name" value="Men's Ethnic Wear">
+                                <input type="hidden" name="price" value="550"> 
+                                <input type="hidden" name="image_url" value="https://imgmedia.lbb.in/media/2020/12/5fe08e7405250c1f0d865452_1608552052680.jpg">
+                                <button type="submit" class="cart-btn">Add To Cart</button>
+                              </form>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="popular-box">
+                    <a href="#" class="popular-box-img">
+                        <img src="https://newcdn.kalkifashion.com/media/wysiwyg/02-square-banner-ready-to-ship-5-7-23.jpg"/>
+                    </a>
+                    <div class="popular-box-text">
+                        <a href="#">Men's Ethnic Wear</a>
+                        <span class="p-cat">Men's Wear</span>
+                        <span class="p-price">1500₹ <del> 1900₹</del></span>
+                        <div class="product-text">
+                            <span class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <span>450 Review's</span>
+                            </span>
+                            <form action="/add-to-cart" method="post">
+                                <input type="hidden" name="product_id" value="123418"> 
+                                <input type="hidden" name="product_name" value="Men's Ethnic Wear">
+                                <input type="hidden" name="price" value="1500">
+                                <input type="hidden" name="image_url" value="https://newcdn.kalkifashion.com/media/wysiwyg/02-square-banner-ready-to-ship-5-7-23.jpg"> 
+                                <button type="submit" class="cart-btn">Add To Cart</button>
+                              </form>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="popular-box">
+                    <a href="#" class="popular-box-img">
+                        <img src="https://www.bonsoir.co.in/cdn/shop/products/F-625-1_large.jpg?v=1620121009"/>
+                    </a>
+                    <div class="popular-box-text">
+                        <a href="#">Men's Party Wear</a>
+                        <span class="p-cat">Men's Wear</span>
+                        <span class="p-price">1500₹ <del> 1900₹</del></span>
+                        <div class="product-text">
+                            <span class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <span>350 Review's</span>
+                            </span>
+                            <form action="/add-to-cart" method="post">
+                                <input type="hidden" name="product_id" value="123419"> 
+                                <input type="hidden" name="product_name" value="Men's Party Wear">
+                                <input type="hidden" name="price" value="1500">
+                                <input type="hidden" name="image_url" value="https://www.bonsoir.co.in/cdn/shop/products/F-625-1_large.jpg?v=1620121009"> 
+                                <button type="submit" class="cart-btn">Add To Cart</button>
+                              </form>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="popular-box">
+                    <a href="#" class="popular-box-img">
+                        <img src="https://i.pinimg.com/originals/f2/84/0c/f2840cf550d7dcad24b44ca99f9789d6.jpg"/>
+                    </a>
+                    <div class="popular-box-text">
+                        <a href="#">Men's Party Wear</a>
+                        <span class="p-cat">Men's Wear</span>
+                        <span class="p-price">1500₹ <del> 1900₹</del></span>
+                        <div class="product-text">
+                            <span class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <span>350 Review's</span>
+                            </span>
+                            <form action="/add-to-cart" method="post">
+                                <input type="hidden" name="product_id" value="123420"> 
+                                <input type="hidden" name="product_name" value="Men's Party Wear">
+                                <input type="hidden" name="price" value="1500">
+                                <input type="hidden" name="image_url" value="https://i.pinimg.com/originals/f2/84/0c/f2840cf550d7dcad24b44ca99f9789d6.jpg"> 
+                                <button type="submit" class="cart-btn">Add To Cart</button>
+                              </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="popular-box">
+                    <a href="#" class="popular-box-img">
+                        <img src="https://www.parivarceremony.com/media/catalog/product/cache/62408a38a401bb86dbe3ed2f017b539f/1/0/1033514.jpg"/>
+                    </a>
+                    <div class="popular-box-text">
+                        <a href="#">Men's Party Wear</a>
+                        <span class="p-cat">Men's Wear</span>
+                        <span class="p-price">1500₹ <del> 1900₹</del></span>
+                        <div class="product-text">
+                            <span class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <span>150 Review's</span>
+                            </span>
+                            <form action="/add-to-cart" method="post">
+                                <input type="hidden" name="product_id" value="123421"> 
+                                <input type="hidden" name="product_name" value="Men's Party Wear">
+                                <input type="hidden" name="price" value="1500">
+
+                                <input type="hidden" name="image_url" value="https://www.parivarceremony.com/media/catalog/product/cache/62408a38a401bb86dbe3ed2f017b539f/1/0/1033514.jpg">
+                                <button type="submit" class="cart-btn">Add To Cart</button>
+                              </form>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="popular-box">
+                    <a href="#" class="popular-box-img">
+                        <img src="https://images.bewakoof.com/uploads/grid/app/blue-shirts-with-chino-pants-bewakoof-blog-3-1604989070.jpg"/>
+                    </a>
+                    <div class="popular-box-text">
+                        <a href="#">Men's Casual Wear</a>
+                        <span class="p-cat">Men's Wear</span>
+                        <span class="p-price">1500₹ <del> 1900₹</del></span>
+                        <div class="product-text">
+                            <span class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <span>440 Review's</span>
+                            </span>
+                            <form action="/add-to-cart" method="post">
+                                <input type="hidden" name="product_id" value="123422"> 
+                                <input type="hidden" name="product_name" value="Men's Casual Wear">
+                                <input type="hidden" name="price" value="1500"> 
+                                <input type="hidden" name="image_url" value="https://images.bewakoof.com/uploads/grid/app/blue-shirts-with-chino-pants-bewakoof-blog-3-1604989070.jpg">
+                                <button type="submit" class="cart-btn">Add To Cart</button>
+                              </form>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="popular-box">
+                    <a href="#" class="popular-box-img">
+                        <img src="https://5.imimg.com/data5/OM/HE/MY-39077357/mens-casual-shirt-500x500.jpg"/>
+                    </a>
+                    <div class="popular-box-text">
+                        <a href="#">Men's Casual Wear</a>
+                        <span class="p-cat">Men's Wear</span>
+                        <span class="p-price">1500₹ <del> 1900₹</del></span>
+                        <div class="product-text">
+                            <span class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <span>650 Review's</span>
+                            </span>
+                            <form action="/add-to-cart" method="post">
+                                <input type="hidden" name="product_id" value="123423"> 
+                                <input type="hidden" name="product_name" value="Men's Casual Wear">
+                                <input type="hidden" name="price" value="1500"> 
+                                <input type="hidden" name="image_url" value="https://5.imimg.com/data5/OM/HE/MY-39077357/mens-casual-shirt-500x500.jpg">
+                                <button type="submit" class="cart-btn">Add To Cart</button>
+                              </form>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="popular-box">
+                    <a href="#" class="popular-box-img">
+                        <img src="https://cdn.shopify.com/s/files/1/0981/8178/files/back-to-black-outfit-black-utility-shirt.jpg?13215484419949015679"/>
+                    </a>
+                    <div class="popular-box-text">
+                        <a href="#">Men's Casual Wear</a>
+                        <span class="p-cat">Men's Wear</span>
+                        <span class="p-price">1500₹ <del> 1900₹</del></span>
+                        <div class="product-text">
+                            <span class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <span>560 Review's</span>
+                            </span>
+                            <form action="/add-to-cart" method="post">
+                                <input type="hidden" name="product_id" value="123425"> 
+                                <input type="hidden" name="product_name" value="Men's Casual Wear">
+                                <input type="hidden" name="price" value="1500">
+                                <input type="hidden" name="image_url" value="https://cdn.shopify.com/s/files/1/0981/8178/files/back-to-black-outfit-black-utility-shirt.jpg?13215484419949015679"> 
+                                <button type="submit" class="cart-btn">Add To Cart</button>
+                              </form>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </section>
+        <section id="popular-products">
+            <div class="popular-heading">
+                <h3>Kid's Wear</h3>
+                <a href="#">All</a>
+            </div>
+            <div class="popular-container">
+                <div class="popular-box">
+                    <a href="#" class="popular-box-img">
+                        <img src="https://www.okboss.co.in/assets/img/home/boys%20birthday%20wear/three%20peace%20casual%20wear.jpg"/>
+                    </a>
+                    <div class="popular-box-text">
+                        <a href="#">Kid's Party Wear</a>
+                        <span class="p-cat">kid's Wear</span>
+                        <span class="p-price">1000₹ <del> 1500₹</del></span>
+                        <div class="product-text">
+                            <span class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <span>350 Review's</span>
+                            </span>
+                            <form action="/add-to-cart" method="post">
+                                <input type="hidden" name="product_id" value="123426"> 
+                                <input type="hidden" name="product_name" value="Kid's Party Wear For Boys">
+                                <input type="hidden" name="price" value="1000"> 
+                                <input type="hidden" name="image_url" value="https://www.okboss.co.in/assets/img/home/boys%20birthday%20wear/three%20peace%20casual%20wear.jpg">
+                                <button type="submit" class="cart-btn">Add To Cart</button>
+                              </form>
+
+                        </div>
+                       
+                    </div>
+                </div>
+                <div class="popular-box">
+                    <a href="#" class="popular-box-img">
+                        <img src="https://th.bing.com/th/id/OIP.FHoD8LRYHwVoLbosZK44AgHaJA?w=202&h=246&c=7&r=0&o=5&dpr=1.3&pid=1.7"/>
+                    </a>
+                    <div class="popular-box-text">
+                        <a href="#">Kid's Party Wear</a>
+                        <span class="p-cat">Kid's Wear</span>
+                        <span class="p-price">2000₹ <del> 2500₹</del></span>
+                        <div class="product-text">
+                            <span class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <span>350 Review's</span>
+                            </span>
+                            <form action="/add-to-cart" method="post">
+                                <input type="hidden" name="product_id" value="123427"> 
+                                <input type="hidden" name="product_name" value="Party Wear For Small  Girls"> 
+                                <input type="hidden" name="price" value="2000">
+                                <input type="hidden" name="image_url" value="https://th.bing.com/th/id/OIP.FHoD8LRYHwVoLbosZK44AgHaJA?w=202&h=246&c=7&r=0&o=5&dpr=1.3&pid=1.7">
+                                <button type="submit" class="cart-btn">Add To Cart</button>
+                              </form>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="popular-box">
+                    <a href="#" class="popular-box-img">
+                        <img src="https://liandli.in/cdn/shop/products/ss3_800x.jpg?v=1669873347"/>
+                    </a>
+                    <div class="popular-box-text">
+                        <a href="#">Kid's Party Wear</a>
+                        <span class="p-cat">Kid's Wear</span>
+                        <span class="p-price">1000₹ <del> 1200₹</del></span>
+                        <div class="product-text">
+                            <span class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <span>550 Review's</span>
+                            </span>
+                            <form action="/add-to-cart" method="post">
+                                <input type="hidden" name="product_id" value="123428"> 
+                                <input type="hidden" name="product_name" value="Party Wear For Girls">
+                                <input type="hidden" name="price" value="1000"> 
+                                <input type="hidden" name="image_url" value="https://liandli.in/cdn/shop/products/ss3_800x.jpg?v=1669873347">
+                                <button type="submit" class="cart-btn">Add To Cart</button>
+                              </form>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="popular-box">
+                    <a href="#" class="popular-box-img">
+                        <img src="https://th.bing.com/th/id/OIP._fmvaXI3S_KHSqu3rjiqyQHaHa?w=202&h=202&c=7&r=0&o=5&dpr=1.3&pid=1.7"/>
+                    </a>
+                    <div class="popular-box-text">
+                        <a href="#">Kid's Ethnic Wear</a>
+                        <span class="p-cat">Kid's Wear</span>
+                        <span class="p-price">1500₹ <del> 2500₹</del></span>
+                        <div class="product-text">
+                            <span class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <span>250 Review's</span>
+                            </span>
+                            <form action="/add-to-cart" method="post">
+                                <input type="hidden" name="product_id" value="123429"> 
+                                <input type="hidden" name="product_name" value="Kid's Ethnic Wear">
+                                <input type="hidden" name="price" value="1500"> 
+                                <input type="hidden" name="image_url" value="https://th.bing.com/th/id/OIP._fmvaXI3S_KHSqu3rjiqyQHaHa?w=202&h=202&c=7&r=0&o=5&dpr=1.3&pid=1.7">
+                                <button type="submit" class="cart-btn">Add To Cart</button>
+                              </form>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="popular-box">
+                    <a href="#" class="popular-box-img">
+                        <img src="https://5.imimg.com/data5/SELLER/Default/2023/3/CD/HR/TJ/184618407/kids-ethnic-wear.jpeg"/>
+                    </a>
+                    <div class="popular-box-text">
+                        <a href="#">Kid's Ethnic Wear</a>
+                        <span class="p-cat"> Kid's Wear</span>
+                        <span class="p-price">550₹ <del> 700₹</del></span>
+                        <div class="product-text">
+                            <span class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <span>100 Review's</span>
+                            </span>
+                            <form action="/add-to-cart" method="post">
+                                <input type="hidden" name="product_id" value="123430"> 
+                                <input type="hidden" name="product_name" value="Kid's Ethnic Wear">
+                                <input type="hidden" name="price" value="550"> 
+                                <input type="hidden" name="image_url" value="https://5.imimg.com/data5/SELLER/Default/2023/3/CD/HR/TJ/184618407/kids-ethnic-wear.jpeg">
+                                <button type="submit" class="cart-btn">Add To Cart</button>
+                              </form>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="popular-box">
+                    <a href="#" class="popular-box-img">
+                        <img src="https://cdn.fcglcdn.com/brainbees/images/products/300x364/14443587a.webp"/>
+                    </a>
+                    <div class="popular-box-text">
+                        <a href="#">Kid's Ethnic Wear</a>
+                        <span class="p-cat">Kid's Wear</span>
+                        <span class="p-price">1500₹ <del> 1900₹</del></span>
+                        <div class="product-text">
+                            <span class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <span>450 Review's</span>
+                            </span>
+                            <form action="/add-to-cart" method="post">
+                                <input type="hidden" name="product_id" value="123431"> 
+                                <input type="hidden" name="product_name" value="Kid's Ethnic Wear">
+                                <input type="hidden" name="price" value="1500">
+                                <input type="hidden" name="image_url" value="https://cdn.fcglcdn.com/brainbees/images/products/300x364/14443587a.webp"> 
+                                <button type="submit" class="cart-btn">Add To Cart</button>
+                              </form>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="popular-box">
+                    <a href="#" class="popular-box-img">
+                        <img src="https://mahezon.in/cdn/shop/files/IMG_20230722_191331_800x1026_crop_center@2x.jpg?v=1690037143"/>
+                    </a>
+                    <div class="popular-box-text">
+                        <a href="#">Kid's Western Wear</a>
+                        <span class="p-cat">Kid's Wear</span>
+                        <span class="p-price">1500₹ <del> 1900₹</del></span>
+                        <div class="product-text">
+                            <span class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <span>350 Review's</span>
+                            </span>
+                            <form action="/add-to-cart" method="post">
+                                <input type="hidden" name="product_id" value="123432"> 
+                                <input type="hidden" name="product_name" value="Girl's Western Wear">
+                                <input type="hidden" name="price" value="1500">
+                                <input type="hidden" name="image_url" value="https://mahezon.in/cdn/shop/files/IMG_20230722_191331_800x1026_crop_center@2x.jpg?v=1690037143"> 
+                                <button type="submit" class="cart-btn">Add To Cart</button>
+                              </form>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="popular-box">
+                    <a href="#" class="popular-box-img">
+                        <img src="https://5.imimg.com/data5/SELLER/Default/2021/5/YV/KO/FK/90786613/182-2-500x500.jpg"/>
+                    </a>
+                    <div class="popular-box-text">
+                        <a href="#">Kid's Western Wear</a>
+                        <span class="p-cat">Kid's Wear</span>
+                        <span class="p-price">1500₹ <del> 1900₹</del></span>
+                        <div class="product-text">
+                            <span class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <span>350 Review's</span>
+                            </span>
+                            <form action="/add-to-cart" method="post">
+                                <input type="hidden" name="product_id" value="123433"> 
+                                <input type="hidden" name="product_name" value="Boy's Western Wear">
+                                <input type="hidden" name="price" value="1500"> 
+                                <input type="hidden" name="image_url" value="https://5.imimg.com/data5/SELLER/Default/2021/5/YV/KO/FK/90786613/182-2-500x500.jpg">
+                                <button type="submit" class="cart-btn">Add To Cart</button>
+                              </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="popular-box">
+                    <a href="#" class="popular-box-img">
+                        <img src="https://amala.earth/cdn/shop/collections/EL-1.jpg?v=1670845958"/>
+                    </a>
+                    <div class="popular-box-text">
+                        <a href="#">Kid's western Wear</a>
+                        <span class="p-cat">Kid's Wear</span>
+                        <span class="p-price">1500₹ <del> 1900₹</del></span>
+                        <div class="product-text">
+                            <span class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <span>150 Review's</span>
+                            </span>
+                            <form action="/add-to-cart" method="post">
+                                <input type="hidden" name="product_id" value="123434"> 
+                                <input type="hidden" name="product_name" value="Girl's Ethnic Wear"> 
+                                <input type="hidden" name="price" value="1500">
+                                <input type="hidden" name="image_url" value="https://amala.earth/cdn/shop/collections/EL-1.jpg?v=1670845958">
+                                <button type="submit" class="cart-btn">Add To Cart</button>
+                              </form>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="popular-box">
+                    <a href="#" class="popular-box-img">
+                        <img src="https://th.bing.com/th/id/OIP.THrHxrB6URO7zVrdnBzTZgHaHa?pid=ImgDet&rs=1"/>
+                    </a>
+                    <div class="popular-box-text">
+                        <a href="#">Kid's Casual Wear</a>
+                        <span class="p-cat">Kid's Wear</span>
+                        <span class="p-price">1500₹ <del> 1900₹</del></span>
+                        <div class="product-text">
+                            <span class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <span>440 Review's</span>
+                            </span>
+                            <form action="/add-to-cart" method="post">
+                                <input type="hidden" name="product_id" value="123434"> 
+                                <input type="hidden" name="product_name" value="Boy's Western Wear">
+                                <input type="hidden" name="price" value="1500">
+                                <input type="hidden" name="image_url" value="https://th.bing.com/th/id/OIP.THrHxrB6URO7zVrdnBzTZgHaHa?pid=ImgDet&rs=1"> 
+                                <button type="submit" class="cart-btn">Add To Cart</button>
+                              </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="popular-box">
+                    <a href="#" class="popular-box-img">
+                        <img src="https://m.media-amazon.com/images/I/51jdfYZj0fL._AC_UY1100_.jpg"/>
+                    </a>
+                    <div class="popular-box-text">
+                        <a href="#">Kid's Western Wear</a>
+                        <span class="p-cat">Kid's Wear</span>
+                        <span class="p-price">1500₹ <del> 1900₹</del></span>
+                        <div class="product-text">
+                            <span class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <span>650 Review's</span>
+                            </span>
+                            <form action="/add-to-cart" method="post">
+                                <input type="hidden" name="product_id" value="123435"> 
+                                <input type="hidden" name="product_name" value="Kid's Western Wear">
+                                <input type="hidden" name="price" value="1500"> 
+                                <input type="hidden" name="image_url" value="https://m.media-amazon.com/images/I/51jdfYZj0fL._AC_UY1100_.jpg">
+                                <button type="submit" class="cart-btn">Add To Cart</button>
+                              </form>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="popular-box">
+                    <a href="#" class="popular-box-img">
+                        <img src="https://m.media-amazon.com/images/I/51a4gJoy9rL._SL1100_.jpg"/>
+                    </a>
+                    <div class="popular-box-text">
+                        <a href="#">Kid's Casual Wear</a>
+                        <span class="p-cat">Kid's Wear</span>
+                        <span class="p-price">1500₹ <del> 1900₹</del></span>
+                        <div class="product-text">
+                            <span class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <span>560 Review's</span>
+                            </span>
+                            <form action="/add-to-cart" method="post">
+                                <input type="hidden" name="product_id" value="123436"> 
+                                <input type="hidden" name="product_name" value="Kid's Casual Wear">
+                                <input type="hidden" name="price" value="1500">
+                                <input type="hidden" name="image_url" value="https://m.media-amazon.com/images/I/51a4gJoy9rL._SL1100_.jpg"> 
+                                <button type="submit" class="cart-btn">Add To Cart</button>
+                              </form>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </section>
+        <section id="popular-products">
+            <div class="popular-heading">
+                <h3>Accessories</h3>
+                <a href="#">All</a>
+            </div>
+            <div class="popular-container">
+                <div class="popular-box">
+                    <a href="#" class="popular-box-img">
+                        <img src="https://a2fashionstores.com/cdn/shop/products/WhatsAppImage2022-10-30at5.55.54PM_640x.jpg?v=1667840847"/>
+                    </a>
+                    <div class="popular-box-text">
+                        <a href="#">Women's Accessories</a>
+                        <span class="p-cat">Accessories</span>
+                        <span class="p-price">1000₹ <del> 1500₹</del></span>
+                        <div class="product-text">
+                            <span class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <span>350 Review's</span>
+                            </span>
+                            <form action="/add-to-cart" method="post">
+                                <input type="hidden" name="product_id" value="123437"> 
+                                <input type="hidden" name="product_name" value="HairClip">
+                                <input type="hidden" name="price" value="1000">
+                                <input type="hidden" name="image_url" value="https://a2fashionstores.com/cdn/shop/products/WhatsAppImage2022-10-30at5.55.54PM_640x.jpg?v=1667840847"> 
+                                <button type="submit" class="cart-btn">Add To Cart</button>
+                              </form>
+
+                        </div>
+                       
+                    </div>
+                </div>
+                <div class="popular-box">
+                    <a href="#" class="popular-box-img">
+                        <img src="https://www.jiomart.com/images/product/original/rvhhfapjmc/art-sundari-silver-plated-alloy-multicolor-teardrop-handmade-earring-product-images-rvhhfapjmc-2-202211021038.jpg?im=Resize=(500,630)"/>
+                    </a>
+                    <div class="popular-box-text">
+                        <a href="#">Women's Earrings</a>
+                        <span class="p-cat">Accessories</span>
+                        <span class="p-price">2000₹ <del> 2500₹</del></span>
+                        <div class="product-text">
+                            <span class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <span>350 Review's</span>
+                            </span>
+                            <form action="/add-to-cart" method="post">
+                                <input type="hidden" name="product_id" value="123438"> 
+                                <input type="hidden" name="product_name" value="Earrings">
+                                <input type="hidden" name="price" value="2000"> 
+                                <input type="hidden" name="image_url" value="https://www.jiomart.com/images/product/original/rvhhfapjmc/art-sundari-silver-plated-alloy-multicolor-teardrop-handmade-earring-product-images-rvhhfapjmc-2-202211021038.jpg?im=Resize=(500,630)">
+                                <button type="submit" class="cart-btn">Add To Cart</button>
+                              </form>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="popular-box">
+                    <a href="#" class="popular-box-img">
+                        <img src="https://th.bing.com/th/id/OIP.nvAK6D31URyCSiupFL_leAHaHa?w=202&h=202&c=7&r=0&o=5&dpr=1.3&pid=1.7"/>
+                    </a>
+                    <div class="popular-box-text">
+                        <a href="#">Women's Necklace</a>
+                        <span class="p-cat">Accessories</span>
+                        <span class="p-price">1000₹ <del> 1200₹</del></span>
+                        <div class="product-text">
+                            <span class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <span>550 Review's</span>
+                            </span>
+                            <form action="/add-to-cart" method="post">
+                                <input type="hidden" name="product_id" value="123439"> 
+                                <input type="hidden" name="product_name" value="Women's Necklace">
+                                <input type="hidden" name="price" value="1000"> 
+                                <input type="hidden" name="image_url" value="https://th.bing.com/th/id/OIP.nvAK6D31URyCSiupFL_leAHaHa?w=202&h=202&c=7&r=0&o=5&dpr=1.3&pid=1.7">
+                    </a>">
+                                <button type="submit" class="cart-btn">Add To Cart</button>
+                              </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="popular-box">
+                    <a href="#" class="popular-box-img">
+                        <img src="https://www.luvihcouture.com/cdn/shop/products/Customorderfront.jpg?v=1682680222"/>
+                    </a>
+                    <div class="popular-box-text">
+                        <a href="#">Bangles</a>
+                        <span class="p-cat">Accessories</span>
+                        <span class="p-price">1500₹ <del> 2500₹</del></span>
+                        <div class="product-text">
+                            <span class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <span>250 Review's</span>
+                            </span>
+                            <form action="/add-to-cart" method="post">
+                                <input type="hidden" name="product_id" value="123440"> 
+                                <input type="hidden" name="product_name" value="Bangles"> 
+                                <input type="hidden" name="price" value="1500">
+                                <input type="hidden" name="image_url" value="https://www.luvihcouture.com/cdn/shop/products/Customorderfront.jpg?v=1682680222">
+                                <button type="submit" class="cart-btn">Add To Cart</button>
+                              </form>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="popular-box">
+                    <a href="#" class="popular-box-img">
+                        <img src="https://th.bing.com/th/id/OIP.q9Tiq5M9vsg7glLgZL1oOQHaJH?w=144&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"/>
+                    </a>
+                    <div class="popular-box-text">
+                        <a href="#">Silk Thread Earrings</a>
+                        <span class="p-cat"> Accessories</span>
+                        <span class="p-price">550₹ <del> 700₹</del></span>
+                        <div class="product-text">
+                            <span class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <span>100 Review's</span>
+                            </span>
+                            <form action="/add-to-cart" method="post">
+                                <input type="hidden" name="product_id" value="123441"> 
+                                <input type="hidden" name="product_name" value="SilkThread Earrings"> 
+                                <input type="hidden" name="price" value="550">
+                                <input type="hidden" name="image_url" value="https://th.bing.com/th/id/OIP.q9Tiq5M9vsg7glLgZL1oOQHaJH?w=144&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7">
+                                <button type="submit" class="cart-btn">Add To Cart</button>
+                              </form>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="popular-box">
+                    <a href="#" class="popular-box-img">
+                        <img src="https://www.jiomart.com/images/product/original/rvrzwthpdw/art-sundari-multi-color-adjustable-handmade-necklace-and-earring-set-product-images-rvrzwthpdw-0-202211232101.jpg?im=Resize=(500,630)"/>
+                    </a>
+                    <div class="popular-box-text">
+                        <a href="#">Necklace</a>
+                        <span class="p-cat">Accessories</span>
+                        <span class="p-price">1500₹ <del> 1900₹</del></span>
+                        <div class="product-text">
+                            <span class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <span>450 Review's</span>
+                            </span>
+                            <form action="/add-to-cart" method="post">
+                                <input type="hidden" name="product_id" value="123442"> 
+                                <input type="hidden" name="product_name" value="Women's Necklace">
+                                <input type="hidden" name="price" value="1500"> 
+                                <input type="hidden" name="image_url" value="https://www.jiomart.com/images/product/original/rvrzwthpdw/art-sundari-multi-color-adjustable-handmade-necklace-and-earring-set-product-images-rvrzwthpdw-0-202211232101.jpg?im=Resize=(500,630)">
+                                <button type="submit" class="cart-btn">Add To Cart</button>
+                              </form>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="popular-box">
+                    <a href="#" class="popular-box-img">
+                        <img src="https://image.made-in-china.com/2f0j00UIkYSljWHbqf/Elegant-Handmade-Pearl-Hair-Accessories-Fashion-Hair-Band.webp"/>
+                    </a>
+                    <div class="popular-box-text">
+                        <a href="#">Hair Band</a>
+                        <span class="p-cat">Accessories</span>
+                        <span class="p-price">1200₹ <del> 1900₹</del></span>
+                        <div class="product-text">
+                            <span class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <span>150 Review's</span>
+                            </span>
+                            <form action="/add-to-cart" method="post">
+                                <input type="hidden" name="product_id" value="123443"> 
+                                <input type="hidden" name="product_name" value="HairBand"> 
+                                <input type="hidden" name="price" value="1200">
+                                <input type="hidden" name="image_url" value="https://image.made-in-china.com/2f0j00UIkYSljWHbqf/Elegant-Handmade-Pearl-Hair-Accessories-Fashion-Hair-Band.webp">
+                                <button type="submit" class="cart-btn">Add To Cart</button>
+                              </form>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="popular-box">
+                    <a href="#" class="popular-box-img">
+                        <img src="https://imgmedia.lbb.in/media/2020/07/5efed703c36ef475084c875f_1593759491902.jpg"/>
+                    </a>
+                    <div class="popular-box-text">
+                        <a href="#">Bags</a>
+                        <span class="p-cat">Accessories</span>
+                        <span class="p-price">700₹ <del> 1900₹</del></span>
+                        <div class="product-text">
+                            <span class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <span>310 Review's</span>
+                            </span>
+                            <form action="/add-to-cart" method="post">
+                                <input type="hidden" name="product_id" value="123444"> 
+                                <input type="hidden" name="product_name" value=" Cloth Bags">
+                                <input type="hidden" name="price" value="700">
+                                <input type="hidden" name="image_url" value="https://imgmedia.lbb.in/media/2020/07/5efed703c36ef475084c875f_1593759491902.jpg"> 
+                                <button type="submit" class="cart-btn">Add To Cart</button>
+                              </form>
+
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="popular-box">
+                    <a href="#" class="popular-box-img">
+                        <img src="https://www.sheclick.com/wp-content/uploads/2015/08/Latest-Metal-Eid-Ul-Azha-Bangles-Design-2015.jpg"/>
+                    </a>
+                    <div class="popular-box-text">
+                        <a href="#"> SilkThread Bangles</a>
+                        <span class="p-cat">Accessories</span>
+                        <span class="p-price">500₹ <del> 900₹</del></span>
+                        <div class="product-text">
+                            <span class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <span>310 Review's</span>
+                            </span>
+                            <form action="/add-to-cart" method="post">
+                                <input type="hidden" name="product_id" value="123445"> 
+                                <input type="hidden" name="product_name" value="SilkThread Bangles">
+                                <input type="hidden" name="price" value="500"> 
+                                <input type="hidden" name="image_url" value="https://www.sheclick.com/wp-content/uploads/2015/08/Latest-Metal-Eid-Ul-Azha-Bangles-Design-2015.jpg">
+                                <button type="submit" class="cart-btn">Add To Cart</button>
+                              </form>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        
+        <section id="partner">
+            <div class="partner-heading">
+                <h3>Our Partners</h3>
+            </div>
+            <div class="logo-container">
+                <img src="https://th.bing.com/th/id/OIP.WgiYwfPl5x1yBG1KJQcTKwHaHa?pid=ImgDet&w=1480&h=1480&rs=1"/>
+                <img src="https://image.shutterstock.com/image-vector/premium-quality-business-logo-vector-260nw-1936156723.jpg"/>
+                <img src="https://th.bing.com/th/id/OIP.3ikHPAP2UZhH27oSuZno2wHaFS?w=223&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"/>
+                <img src="https://th.bing.com/th/id/OIP.iQpnF5mnvA7zCsclvXr3QAHaFa?w=256&h=187&c=7&r=0&o=5&dpr=1.3&pid=1.7"/>
+            </div>
+        </section>
+        
+        <footer>
+            <div class="footer-container">
+                <div class="footer-company-box">
+                    <a href="#" class="footer-logo">Knitting With Love</a>
+                    <p>Knitting With Love is a Custom Made Clothing Store By Emerging Fahion Lover's.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+
+                    </div>
+                </div>
+                <div class="footer-link-box">
+                    <strong>Main Link's</strong>
+                    <ul>
+                        <li><a href="#">Our Product's</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                        <li><a href="#">Term's and Condition's</a></li>
+                    </ul>
+                </div>
+                <div class="footer-link-box">
+                    <strong>Communication Link's</strong>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Material's</a></li>
+                        <li><a href="#">Usage</a></li>
+                    </ul>
+                </div>
+                <div class="footer-link-box">
+                    <strong>Products Link's</strong>
+                    <ul>
+                        <li><a href="#">Women's Wear</a></li>
+                        <li><a href="#">Men's Wear</a></li>
+                        <li><a href="#">Kid's Wear</a></li>
+                        <li><a href="#">Accessories</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+            <div class="footer-bottom">
+                <span class="footer-own">Made By Fashion Lover's</span>
+                <span class="copy">© Copyright 2023 - Fashion Lover's</span>
+                
+            </div>
+        </footer>
+    </body>
+</html>

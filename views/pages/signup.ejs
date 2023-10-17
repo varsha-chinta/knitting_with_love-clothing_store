@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Knitting With Love</title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          background-image: url("https://tse3.mm.bing.net/th?id=OIP.PPYufeyhqNN_xrAYBGC3ZwHaEH&pid=Api&P=0&h=180");
+          background-repeat: no-repeat;
+          background-size:cover;
+
+}
+
+.container {
+    max-width: 400px;
+    margin: 200px auto;
+    padding: 20px;
+    background-color:transparent;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+h2 {
+    margin: 0;
+    font-size: 30px;
+    text-align: center;
+    font-weight: 800;
+    color:rgb(222, 201, 241);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+button {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            
+            <form  method="post" action="/signupsubmit" id="signup-form" class="form" onsubmit="return validatePassword()">
+                <h2>Sign Up</h2>
+                <input type="text" id="FullName" placeholder="FullName" name="FullName" required><br>
+                <input type="email" id="Email" placeholder="Email"  name="Email" required><br>
+                <input type="password" id="Password" placeholder="Password"  name="Password" required><br>
+                <span id="passwordError" style="color: red;"></span><br>
+                <button type="submit">Sign Up</button>
+            </form>
+            
+        </div>
+    </div>
+    <script>
+         function validatePassword() {
+            const password = document.getElementById("Password").value;
+            const passwordError = document.getElementById("passwordError");
+
+            // Check if the password length is at least 8 characters
+            if (password.length < 8) {
+                passwordError.textContent = "Password must be at least 8 characters long.";
+                return false;
+            }
+
+            // Check if the password contains at least one uppercase letter
+            if (!/[A-Z]/.test(password)) {
+                passwordError.textContent = "Password must contain at least one uppercase letter.";
+                return false;
+            }
+
+            // Check if the password contains at least one lowercase letter
+            if (!/[a-z]/.test(password)) {
+                passwordError.textContent = "Password must contain at least one lowercase letter.";
+                return false;
+            }
+            if (!/\d/.test(password)) {
+                passwordError.textContent = "Password must contain at least one digit.";
+                return false;
+            }
+
+            // Check if the password contains at least one special character
+            if (!/[$@$!%*?&#]/.test(password)) {
+                passwordError.textContent = "Password must contain at least one special character.";
+                return false;
+            }
+            const commonPasswords = ["password", "123456", "qwerty", "abc123"];
+            if (commonPasswords.includes(password.toLowerCase())) {
+                passwordError.textContent = "Password is too common. Please choose a stronger password.";
+                return false;
+            }
+
+            passwordError.textContent = ""; // Clear any previous error messages
+            return true;
+        }
+       
+
+    </script>
+</body>
+</html>
+
